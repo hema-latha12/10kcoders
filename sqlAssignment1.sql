@@ -105,7 +105,6 @@ SELECT AVG(sal), deptno FROM emp WHERE deptno != 10 GROUP BY deptno;
 SELECT ename, sal FROM emp WHERE sal > 2500;
 
 -- 35. Find job roles with average salary between 30,000 and 60,000.
--- Note: Scaled down based on typical standard EMP tables where salaries don't usually hit 30k.
 SELECT AVG(sal), job FROM emp GROUP BY job HAVING AVG(sal) BETWEEN 3000 AND 6000;
 
 -- 36. List employees by department number in ascending order, and within each department by salary descending.
@@ -115,11 +114,9 @@ SELECT * FROM emp ORDER BY deptno ASC, sal DESC;
 SELECT * FROM emp ORDER BY job ASC, ename ASC;
 
 -- 38. Retrieve employees earning more than 30,000 and sort them by salary in descending order.
--- Note: Scaled down based on standard EMP table maximum thresholds (e.g., sal > 3000).
 SELECT * FROM emp WHERE sal > 3000 ORDER BY sal DESC;
 
 -- 39. List employees from department 10, sorted by hire date (oldest first).
--- Note: Sorting oldest first uses ASC order.
 SELECT * FROM emp WHERE deptno = 10 ORDER BY hiredate ASC;
 
 -- 40. Display employee names and job titles ordered by job in descending order and salary ascending.
